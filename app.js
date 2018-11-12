@@ -8,6 +8,8 @@ const mongoose = require('mongoose');
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+//Makes it possible to view images that are posted
+app.use('/uploads', express.static(' uploads\\2018-11-07T16-17-22.551Zproject2.jpeg-uploads'))
 
 //connect to the database
 mongoose.connect(
@@ -38,8 +40,12 @@ const productRoutes = require('./api/routes/product');
 //Require your /order routes and their methods
 const orderRoutes = require('./api/routes/order');
 
+//Require your /user routes and their methods
+const userRoutes = require('./api/routes/user');
+
 app.use('/product', productRoutes);
 app.use('/order', orderRoutes);
+app.use('/user', userRoutes);
 
 //Create route for error handling 
 app.use((req, res, next) => {

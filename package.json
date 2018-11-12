@@ -10,8 +10,11 @@
   "author": "Osemeke Meghai",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.2",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.3.7",
     "multer": "^1.4.1",
     "nodemon": "^1.18.5"
